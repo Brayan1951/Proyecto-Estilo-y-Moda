@@ -1,9 +1,9 @@
-# Proyecto Estimo y Moda del curso DESARROLLO DE ENTORNOS WEB #715
+# Proyecto Estilo y Moda del curso Desarrolo De Entornos Web #715
 ## Pasos de instalacion del Proyecto
 1. Descargar carpeta y descomprimirla
 2. Abrir en tu editor de codigo 
 3. descargar modulos, escribir en la terminal ``` npm install ```
-4. Ejecutar modo de desarrollo ```npm run dev```
+4. Ejecutar modo de desarrollo ```npm run start```
 
 
 ### Enlances
