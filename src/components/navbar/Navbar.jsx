@@ -5,18 +5,7 @@ export function Navbar({ setPagina }) {
 
 
   return (
-    // <div>
-    //   <h1>Navbar</h1>
-    //   <ul>
-    //     <li onClick={()=>setPagina('inicio')}>inicio</li>
-    //     <li onClick={()=>setPagina('nosotros')}>nosotros</li>
-    //     <li onClick={()=>setPagina('alasd')}>alasd</li>
-    //   </ul>
 
-
-
-
-    // </div>
 
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
@@ -45,7 +34,7 @@ export function Navbar({ setPagina }) {
             </li>
             <li className="nav-item ">
               <a className="nav-link " href="#" role="button" onClick={() => setPagina('tienda')} >
-                Tiendas
+                Tienda
               </a>
 
             </li>

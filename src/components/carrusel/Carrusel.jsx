@@ -22,7 +22,6 @@ export function Carrusel() {
         }, 5000);
 
         return () => {
-            console.log("eliminado");
             clearInterval(interval)
         }
     }, [])

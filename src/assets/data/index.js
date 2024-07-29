@@ -1,0 +1,1 @@
+export { TodosProductos } from "./ProductoData";
