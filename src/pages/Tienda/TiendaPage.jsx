@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { TodosProductos } from '../../assets/data'
-import './tienda.css'
-import Card from '../../components/card/Card'
-// import s from './img/productos/C1.jpeg' 
+import { Card } from '../../components'
 
+import './tienda.css'
+// import s from './img/productos/C1.jpeg' 
 // import imagen from './../../assets/img/productos/C1.jpeg'
 
 
@@ -30,12 +30,18 @@ export function TiendaPage() {
   // console.log(productos[0].getProducto());
 
   return (
-    <main>
-      <h1>
+    <main className='main-lista'>
 
-        TiendaPage
-      </h1>
+      <aside className='filtro-lista'>
+        <h2>lista</h2>
 
+
+
+      </aside>
+
+
+
+      
       <section className='lista-productos'>
 
         {

@@ -5,13 +5,15 @@ export class Producto {
   stock;
   imagen;
   altImagen;
+  categoria;
   // variantes;
 
-  constructor( nombre, descripcion, precio,stock,imagen='',altImagen='') {
+  constructor( nombre, descripcion, precio,stock,categoria='',imagen='',altImagen='') {
     this.nombre = nombre;
     this.descripcion = descripcion;
     this.precio = precio;
     this.stock = stock;
+    this.categoria = categoria;
     this.imagen = imagen;
     this.altImagen = altImagen;
     // this.variantes = [];

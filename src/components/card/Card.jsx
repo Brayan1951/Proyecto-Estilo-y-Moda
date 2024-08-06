@@ -1,7 +1,7 @@
 import React from 'react'
 import './card.css'
 
-export default function Card({ producto }) {
+export  function Card({ producto }) {
     // console.log(producto);
     // console.log(producto);
     const { nombre, descripcion, precio, stock, imagen, altImagen } = producto

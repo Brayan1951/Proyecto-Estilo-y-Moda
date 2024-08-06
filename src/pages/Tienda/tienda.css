@@ -1,3 +1,6 @@
+
+
+
 .lista-productos {
     display: grid;
     /* grid-column: 2; */
@@ -8,3 +11,16 @@
     /* column-gap: 20px; */
 
 }
+.main-lista{
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+
+
+aside{
+    min-width: 300px;
+    height: 100%;
+    background-color: red;
+}
+
