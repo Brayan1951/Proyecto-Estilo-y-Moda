@@ -1,1 +1,1 @@
-export { TodosProductos } from "./ProductoData";
+export * from "./ProductoData";

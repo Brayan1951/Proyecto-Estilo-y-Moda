@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import { InicioPage } from '../../pages/Inicio/InicioPage'
 
+// aca obtengo la referencia de la funcion para el cambio de pagina
 export function Navbar({ setPagina }) {
+
 
 
   return (
@@ -9,6 +11,7 @@ export function Navbar({ setPagina }) {
 
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
+        {/* en esta parte se hace el cambio de la pagina "SetPagina" */}
         <a className="navbar-brand" href="#" onClick={() => setPagina('inicio')}>Estilo y Moda</a>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>

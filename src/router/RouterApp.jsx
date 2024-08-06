@@ -4,7 +4,7 @@ import { ContactoPage, InicioPage, NosotrosPage, NotFoundPage, SedesPage, Tienda
 
 export default function RouterApp() {
 
-  
+  // uso es state para controlar la navegacion
   const [paginaActual, setPaginaActual] = useState('inicio')
 
   const changePagina=(pagina='')=>{
@@ -40,6 +40,8 @@ export default function RouterApp() {
 
   return (
     <div>
+
+      {/* Mando  changePagina para que el componente lo pueda utilizar*/}
         <Navbar setPagina={changePagina}/>
         {
           mostartPagina()

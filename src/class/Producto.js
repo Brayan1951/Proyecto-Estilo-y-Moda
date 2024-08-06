@@ -1,17 +1,36 @@
 export class Producto {
-  #nombre;
-  #descripcion;
-  #precio;
-  #stock;
-  // #variantes;
+  nombre;
+  descripcion;
+  precio;
+  stock;
+  imagen;
+  altImagen;
+  // variantes;
 
-  constructor( nombre, descripcion, precio,stock) {
-    this.#nombre = nombre;
-    this.#descripcion = descripcion;
-    this.#precio = precio;
-    this.#stock = stock;
+  constructor( nombre, descripcion, precio,stock,imagen='',altImagen='') {
+    this.nombre = nombre;
+    this.descripcion = descripcion;
+    this.precio = precio;
+    this.stock = stock;
+    this.imagen = imagen;
+    this.altImagen = altImagen;
     // this.variantes = [];
   }
+
+  getProducto(){
+    return this.nombre
+  }
+  getPrecio(){
+    return this.precio
+  }
+  getImagen(){
+    return this.imagen
+  }
+
+  getDescripcion(){
+    return this.descripcion
+  }
+
 
 //   agregarVariante(color, talla, stock) {
 //     const variante = new Variante(color, talla, stock);
