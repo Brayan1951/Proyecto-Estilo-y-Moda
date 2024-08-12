@@ -33,7 +33,22 @@ export function TiendaPage() {
     <main className='main-lista'>
 
       <aside className='filtro-lista'>
-        <h2>lista</h2>
+        <div className="categoria">
+          <h3>Categoria</h3>
+          <div className="check-categoria">
+
+            <input type='checkbox' />
+            <label htmlFor="Hombre">Hombre</label>
+          </div>
+          <div className="check-categoria">
+            <input type='checkbox' />
+            <label htmlFor="Mujer">Mujer</label>
+          </div>
+          <div className="check-categoria">
+            <input type='checkbox' />
+            <label htmlFor="Niño">Niño/Niña</label>
+          </div>
+        </div>
 
 
 
@@ -41,7 +56,7 @@ export function TiendaPage() {
 
 
 
-      
+
       <section className='lista-productos'>
 
         {

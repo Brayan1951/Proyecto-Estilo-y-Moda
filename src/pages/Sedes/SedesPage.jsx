@@ -1,7 +1,11 @@
 import React from 'react'
 
-export  function SedesPage() {
+export function SedesPage() {
   return (
-    <div>SedesPage</div>
+    <div>
+
+      
+
+    </div>
   )
 }
