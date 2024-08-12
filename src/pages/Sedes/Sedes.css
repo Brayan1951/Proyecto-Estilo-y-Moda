@@ -1,0 +1,37 @@
+.sedes-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.sedes-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sedes-description {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.sedes-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sede-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.sede-image {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.sede-address {
+    white-space: pre-line;
+}
+

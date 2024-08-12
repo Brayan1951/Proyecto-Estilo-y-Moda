@@ -1,11 +1,10 @@
 import React from 'react'
+import Sedes from './Sedes';
 
-export function SedesPage() {
+export  function SedesPage() {
   return (
-    <div>
-
-      
-
+    <div className='container'> 
+    <Sedes/> 
     </div>
-  )
+  );
 }
