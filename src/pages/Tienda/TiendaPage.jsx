@@ -51,8 +51,9 @@ export function TiendaPage() {
             <label htmlFor="Niño">Niño/Niña</label>
           </div>
         </div>
+        <hr />
         <div className="carrito-state">
-          <p>Cantidad carrito: {carrito.length}</p>
+          <h4>Cantidad carrito: {carrito.length}</h4>
         </div>
 
       </aside>

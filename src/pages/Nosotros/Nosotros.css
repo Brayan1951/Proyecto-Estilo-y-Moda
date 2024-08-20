@@ -1,0 +1,40 @@
+.nosotros-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.nosotros-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.nosotros-description {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.nosotros-list {
+    display: block;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.nosotros-item {
+    display: block;
+    align-items: center;
+    gap: 20px;
+}
+
+.nosotros-image {
+    display: inline-block; /* Ajusta la imagen en línea con el texto */
+    max-width: 50%; /* Asegura que la imagen no se haga más grande que su contenedor */
+    height: auto; /* Mantener la proporción */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    vertical-align: middle; /* Alinea verticalmente el medio de la imagen con el texto */
+    margin: 1rem 0;
+}
+
+.nosotros-address {
+    white-space: pre-line;
+}
