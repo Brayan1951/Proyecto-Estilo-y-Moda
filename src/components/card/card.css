@@ -46,10 +46,35 @@ article button {
     align-items: center;
 }
 
-.modal-contet{
+.modal-content{
     background-color: white;
     padding: 20px;
     width: 50%;
     height: 500px;
     min-width: 900px;
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: auto auto; 
+    gap: 10px;
+}
+
+.modal-content_informacion{
+    grid-column: 1 / 2; 
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+
+}
+.modal-content_opciones{
+    grid-column: 2 / 3; }
+
+.modal-content-buttons{
+    /* max-height: 50px; */
+    grid-column: 1 / 3;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+.modal-content-buttons button{
+    height: 40px;
 }

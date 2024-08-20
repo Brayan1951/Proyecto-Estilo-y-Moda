@@ -1,25 +1,49 @@
 import React from 'react'
 
-export default function Modal({ show, closeModal, producto }) {
+export default function Modal({ show, closeModal, producto , agregarCarrito}) {
     const { nombre, descripcion, precio, stock, imagen, altImagen } = producto
-    console.log(show);
 
+    
+    const confirmacionProducto=(producto)=>{
+        agregarCarrito(producto)   
+        closeModal()
+    }
+    
+    
     if (!show) {
         return null;
     }
 
-    return (
-        <div className='modal'>
-            <div className="modal-contet">
 
-                <h1>{nombre}</h1>
-                <div className="imagen-container">
-                    <img src={imagen} alt="" />
+
+    return (
+        <section className='modal'>
+            <div className="modal-content">
+
+                <div className="modal-content_informacion">
+                    <h1>{nombre}</h1>
+                    <div className="imagen-container">
+                        <img src={imagen} alt="" />
+                    </div>
+
                 </div>
-                <p>{descripcion}</p>
-                <span>S/{precio}</span>
-                <button onClick={() => closeModal()}>cerrar</button>
+                <div className="modal-content_opciones">
+                    <p>{descripcion}</p>
+                    <p>Tallas disponibles:</p>
+                    <p>
+
+                    S M L
+                    </p>
+                    <p>Cantidad 1</p>
+                    <span>Precio Unitario: S/{precio}</span>
+
+                </div>
+                <div className="modal-content-buttons">
+                    <button onClick={() => closeModal()}>cerrar</button>
+                    <button onClick={() => confirmacionProducto(producto)}>Agregar</button>
+
+                </div>
             </div>
-        </div>
+        </section>
     )
 }

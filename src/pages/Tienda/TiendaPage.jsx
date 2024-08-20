@@ -11,6 +11,9 @@ export function TiendaPage() {
 
   const [productos, setProductos] = useState([])
 
+  const [carrito, setCarrito] = useState([])
+
+
 
   useEffect(() => {
 
@@ -18,16 +21,15 @@ export function TiendaPage() {
 
   }, [])
 
+  const agregarCarrito = (producto) => {
+    setCarrito((prevValue) => {
+      return [...prevValue, { ...producto }]
+    })
+    // console.log(producto);
+
+  }
 
 
-
-  // console.log(
-
-  //   TodosProductos()
-  // );
-
-
-  // console.log(productos[0].getProducto());
 
   return (
     <main className='main-lista'>
@@ -49,8 +51,9 @@ export function TiendaPage() {
             <label htmlFor="Niño">Niño/Niña</label>
           </div>
         </div>
-
-
+        <div className="carrito-state">
+          <p>Cantidad carrito: {carrito.length}</p>
+        </div>
 
       </aside>
 
@@ -61,7 +64,7 @@ export function TiendaPage() {
 
         {
           productos.map((producto, index) => {
-            return <Card producto={producto} key={index} />
+            return <Card producto={producto} key={index} agregarCarrito={agregarCarrito} />
 
           })
         }

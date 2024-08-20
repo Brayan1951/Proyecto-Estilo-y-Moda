@@ -2,9 +2,13 @@ import React, { useState } from 'react'
 import './card.css'
 import Modal from './Modal'
 
-export function Card({ producto }) {
+export function Card({ producto,agregarCarrito }) {
     // console.log(producto);
     // console.log(producto);
+    
+    
+    
+    
     const { nombre, descripcion, precio, stock, imagen, altImagen } = producto
 
     const [showModal, setShowModal] = useState(false)
@@ -17,6 +21,8 @@ export function Card({ producto }) {
     }
 
 
+
+
     return (
         <>
             <article>
@@ -26,7 +32,7 @@ export function Card({ producto }) {
                 </div>
                 <h4>S/ {precio}</h4>
                 <button onClick={() => openModal()}>Agregar</button>
-                <Modal producto={producto} show={showModal} closeModal={closeModal} />
+                <Modal producto={producto} show={showModal} closeModal={closeModal} agregarCarrito={agregarCarrito} />
             </article>
         </>
     )
