@@ -7,7 +7,7 @@ import './tienda.css'
 // import imagen from './../../assets/img/productos/C1.jpeg'
 
 
-export function TiendaPage() {
+export function TiendaPage({ setPagina }) {
 
   const [productos, setProductos] = useState([])
 
@@ -28,7 +28,15 @@ export function TiendaPage() {
     // console.log(producto);
 
   }
-
+  const cantidadCarrito = () => {
+    console.log(carrito);
+    
+    let cantidadTotal = 0
+    carrito.forEach(({ cantidad }) => {
+      cantidadTotal += cantidad
+    })
+    return cantidadTotal
+  }
 
 
   return (
@@ -53,7 +61,8 @@ export function TiendaPage() {
         </div>
         <hr />
         <div className="carrito-state">
-          <h4>Cantidad carrito: {carrito.length}</h4>
+          <h4>Cantidad carrito: {cantidadCarrito()}</h4>
+          <button onClick={() => setPagina('carrito')}>Carrito</button>
         </div>
 
       </aside>

@@ -1,15 +1,22 @@
 import React from 'react'
+import { useForm } from '../../hooks'
 
-export default function Modal({ show, closeModal, producto , agregarCarrito}) {
-    const { nombre, descripcion, precio, stock, imagen, altImagen } = producto
+export default function Modal({ show, closeModal, producto, agregarCarrito }) {
+    const { nombre, descripcion, precio, imagen  } = producto
 
-    
-    const confirmacionProducto=(producto)=>{
-        agregarCarrito(producto)   
+    const {cantidad,changeForm}=useForm({cantidad:1})
+
+
+
+    const confirmacionProducto = (producto) => {
+        // const canti=parseInt(cantidad)
+        agregarCarrito({...producto, cantidad:parseInt(cantidad) })
         closeModal()
+        // console.log({...producto,cantidad});
+        
     }
-    
-    
+
+
     if (!show) {
         return null;
     }
@@ -32,9 +39,13 @@ export default function Modal({ show, closeModal, producto , agregarCarrito}) {
                     <p>Tallas disponibles:</p>
                     <p>
 
-                    S M L
+                        S M L
                     </p>
-                    <p>Cantidad 1</p>
+
+                    <div className="opciones_cantidad">
+                    <label>Cantidad </label><input name='cantidad' value={cantidad} onChange={changeForm} min={1} type='number' />
+
+                    </div>
                     <span>Precio Unitario: S/{precio}</span>
 
                 </div>
