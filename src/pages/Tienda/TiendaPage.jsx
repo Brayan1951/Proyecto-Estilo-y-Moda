@@ -7,11 +7,13 @@ import './tienda.css'
 // import imagen from './../../assets/img/productos/C1.jpeg'
 
 
-export function TiendaPage({ setPagina }) {
+export function TiendaPage({ setPagina,carrito,setCarrito }) {
+
+
 
   const [productos, setProductos] = useState([])
 
-  const [carrito, setCarrito] = useState([])
+  // const [carrito, setCarrito] = useState([])
 
 
 

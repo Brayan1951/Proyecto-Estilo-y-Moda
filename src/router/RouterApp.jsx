@@ -7,6 +7,9 @@ export default function RouterApp() {
   // uso es state para controlar la navegacion
   const [paginaActual, setPaginaActual] = useState('inicio')
 
+
+  const [carrito, setCarrito] = useState([])
+
   const changePagina=(pagina='')=>{
     setPaginaActual(pagina)
   }
@@ -20,7 +23,7 @@ export default function RouterApp() {
         return <NosotrosPage/>
     
         case 'tienda':
-          return <TiendaPage setPagina={changePagina}/>
+          return <TiendaPage setPagina={changePagina} carrito={carrito} setCarrito={setCarrito} />
 
         case 'sedes':
           return <SedesPage/>
@@ -29,7 +32,7 @@ export default function RouterApp() {
         return <ContactoPage/>
     
       case 'carrito':
-        return <CarritoPage/>
+        return <CarritoPage carrito={carrito} setCarrito={setCarrito} />
     
     
       default:

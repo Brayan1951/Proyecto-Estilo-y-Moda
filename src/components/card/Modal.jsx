@@ -47,6 +47,7 @@ export default function Modal({ show, closeModal, producto, agregarCarrito }) {
 
                     </div>
                     <span>Precio Unitario: S/{precio}</span>
+                    <span>Precio Total: S/{precio * cantidad}</span>
 
                 </div>
                 <div className="modal-content-buttons">
