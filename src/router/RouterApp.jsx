@@ -14,6 +14,8 @@ export default function RouterApp() {
     setPaginaActual(pagina)
   }
 
+
+
   const mostartPagina=()=>{
 
     switch (paginaActual) {

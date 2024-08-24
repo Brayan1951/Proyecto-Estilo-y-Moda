@@ -1,37 +1,93 @@
 .sedes-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
     padding: 20px;
     font-family: Arial, sans-serif;
 }
-
-.sedes-title {
+.app {
     text-align: center;
-    margin-bottom: 20px;
 }
 
-.sedes-description {
+.header {
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.header h1 {
+    margin: 0;
+}
+
+.header p {
+    margin: 10px 0 0;
+}
+
+.sede {
+    margin: 20px;
     text-align: center;
-    margin-bottom: 40px;
-}
-
-.sedes-list {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.sede-item {
-    display: flex;
-    align-items: center;
-    gap: 20px;
 }
 
 .sede-image {
     width: 300px;
     height: 200px;
     object-fit: cover;
+    transition: transform 0.3s ease;
 }
 
-.sede-address {
-    white-space: pre-line;
+.sede-image:hover {
+    transform: rotate(5deg);
 }
+
+.sede-direccion {
+    margin-top: 10px;
+    white-space: pre-line; /* Para respetar los saltos de línea en la dirección */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

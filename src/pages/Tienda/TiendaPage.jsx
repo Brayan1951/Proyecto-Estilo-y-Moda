@@ -31,7 +31,6 @@ export function TiendaPage({ setPagina,carrito,setCarrito }) {
 
   }
   const cantidadCarrito = () => {
-    console.log(carrito);
     
     let cantidadTotal = 0
     carrito.forEach(({ cantidad }) => {
