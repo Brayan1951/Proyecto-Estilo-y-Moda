@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, {  } from 'react'
 
 import './carrito.css'
 import DatosCliente from './DatosCliente'
@@ -24,7 +24,7 @@ export function CarritoPage({ carrito = [], setCarrito }) {
 
 
 
-      <DetalleTotal />
+      <DetalleTotal  carrito={carrito} />
       <CarritoLista carrito={carrito} deleteCarrito={deleteCarrito} />
 
 

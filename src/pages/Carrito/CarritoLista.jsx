@@ -2,7 +2,9 @@ import React from 'react'
 
 
 function CarritoItem({producto,deleteCarrito,index}) {
-    const { nombre, cantidad, precio,imagen }=producto
+  console.log(producto);
+  
+    const { nombre,descripcion, cantidad, precio,imagen,talla }=producto
 
     return(
         <div className="detalle-lista-item" >
@@ -12,9 +14,9 @@ function CarritoItem({producto,deleteCarrito,index}) {
           className="product-image"
         />
         <div className="product-info">
-          <h3>Camisa Gris</h3>
-          <p>Camisa gris de algodón</p>
-          <p><strong>Talla:</strong> M</p>
+          <h3>{nombre}</h3>
+          <p>{descripcion}</p>
+          <p><strong>Talla:</strong> {talla}</p>
         </div>
         <div className="product-price">
           <p><strong>Precio:</strong> S/ {precio}</p>
@@ -27,7 +29,7 @@ function CarritoItem({producto,deleteCarrito,index}) {
           <button>+</button>
         </div> */}
         <div className="product-remove">
-          <button className="remove-button"  onClick={() => deleteCarrito(index)}>delete</button>
+          <button className="remove-button"  onClick={() => deleteCarrito(index)}></button>
         </div>
       </div>
     )
