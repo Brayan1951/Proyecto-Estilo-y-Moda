@@ -8,7 +8,7 @@ export class Producto {
   categoria;
   // variantes;
 
-  constructor( nombre, descripcion, precio,stock,categoria='',imagen='',altImagen='') {
+  constructor( nombre, descripcion, precio,stock,categoria=[],imagen='',altImagen='') {
     this.nombre = nombre;
     this.descripcion = descripcion;
     this.precio = precio;

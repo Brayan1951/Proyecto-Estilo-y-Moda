@@ -14,6 +14,7 @@
 .main-lista{
   display: grid;
   grid-template-columns: auto 1fr;
+  min-height: 700px;
 }
 
 
@@ -24,3 +25,18 @@ aside{
     background-color: rgba(217, 217, 217, 1);
 }
 
+.check-categoria{
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+}
+.check-categoria input[type="checkbox"]{
+width: 30px;
+height: 30px;
+margin-left: 20px;
+/* padding: 600px; */
+}
+h5{
+  width: 100%;
+  text-align: center;
+}

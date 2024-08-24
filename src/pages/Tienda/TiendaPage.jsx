@@ -7,14 +7,13 @@ import './tienda.css'
 // import imagen from './../../assets/img/productos/C1.jpeg'
 
 
-export function TiendaPage({ setPagina,carrito,setCarrito }) {
+export function TiendaPage({ setPagina, carrito, setCarrito }) {
 
 
 
   const [productos, setProductos] = useState([])
 
-  // const [carrito, setCarrito] = useState([])
-
+  const [selectCategories, setSetselectCategories] = useState([])
 
 
   useEffect(() => {
@@ -27,11 +26,15 @@ export function TiendaPage({ setPagina,carrito,setCarrito }) {
     setCarrito((prevValue) => {
       return [...prevValue, { ...producto }]
     })
-    // console.log(producto);
 
   }
+
+
+
+
+
   const cantidadCarrito = () => {
-    
+
     let cantidadTotal = 0
     carrito.forEach(({ cantidad }) => {
       cantidadTotal += cantidad
@@ -40,24 +43,58 @@ export function TiendaPage({ setPagina,carrito,setCarrito }) {
   }
 
 
+  const handleCheckBox = (event) => {
+    const { value, checked } = event.target;
+    if (checked) {
+      setSetselectCategories([...selectCategories, value])
+    } else {
+
+      setSetselectCategories(selectCategories.filter((categoria) => categoria != value))
+    }
+
+  }
+
+
+
+  useEffect(() => {
+    if (selectCategories.length == 0) {
+      setProductos(TodosProductos())
+
+    } else {
+
+
+      const productosFiltrados = TodosProductos().filter((producto) =>
+        selectCategories.some((category) => producto.categoria.includes(category))
+      );
+      setProductos(productosFiltrados)
+    }
+
+    // console.log(selectCategories);
+    // console.log(productosFiltrados);
+    console.log("cambio cate");
+
+  }, [selectCategories])
+
+
   return (
     <main className='main-lista'>
 
       <aside className='filtro-lista'>
+
         <div className="categoria">
           <h3>Categoria</h3>
           <div className="check-categoria">
 
-            <input type='checkbox' />
-            <label htmlFor="Hombre">Hombre</label>
+            <input value={'hombre'} onChange={handleCheckBox} type='checkbox' />
+            <h5 htmlFor="Hombre">Hombre</h5>
           </div>
           <div className="check-categoria">
-            <input type='checkbox' />
-            <label htmlFor="Mujer">Mujer</label>
+            <input value={"mujer"} onChange={handleCheckBox} type='checkbox' />
+            <h5 htmlFor="Mujer">Mujer</h5>
           </div>
           <div className="check-categoria">
-            <input type='checkbox' />
-            <label htmlFor="Niño">Niño/Niña</label>
+            <input value={"niño"} onChange={handleCheckBox} type='checkbox' />
+            <h5 htmlFor="Niño">Niño/Niña</h5>
           </div>
         </div>
         <hr />
