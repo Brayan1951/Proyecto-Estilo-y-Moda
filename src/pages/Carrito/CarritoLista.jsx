@@ -2,7 +2,6 @@ import React from 'react'
 
 
 function CarritoItem({producto,deleteCarrito,index}) {
-  console.log(producto);
   
     const { nombre,descripcion, cantidad, precio,imagen,talla }=producto
 
@@ -23,11 +22,7 @@ function CarritoItem({producto,deleteCarrito,index}) {
           <p><strong>Cantidad:</strong> {cantidad}</p>
           <p><strong>Total:</strong> S/ {precio*cantidad}</p>
         </div>
-        {/* <div className="product-quantity">
-          <button>-</button>
-          <span>{cantidad}</span>
-          <button>+</button>
-        </div> */}
+ 
         <div className="product-remove">
           <button className="remove-button"  onClick={() => deleteCarrito(index)}></button>
         </div>

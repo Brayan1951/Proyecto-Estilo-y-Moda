@@ -34,7 +34,7 @@ export default function RouterApp() {
         return <ContactoPage/>
     
       case 'carrito':
-        return <CarritoPage carrito={carrito} setCarrito={setCarrito} />
+        return <CarritoPage carrito={carrito} setCarrito={setCarrito} setPagina={changePagina} />
     
     
       default:

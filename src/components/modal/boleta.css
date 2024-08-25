@@ -1,0 +1,60 @@
+.modal {
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* right: 0; */
+    /* bottom: 0; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content-boleta {
+    background-color: white;
+    padding: 20px;
+    width: 50%;
+    height: 500px;
+    min-width: 900px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.modal-content-buttons-boleta{
+    padding-top: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.modal-content-buttons-boleta button {
+    background-color: rgb(113, 231, 113);
+    width: 70%;
+    height: 60px;
+    border-radius: 7px;
+    font-weight: bolder;
+}
+
+.cabecera-boleta {
+    width: 100%;
+    text-align: center;
+}
+.detalle-boleta{
+    display: flex;
+    justify-content: center;
+}
+
+table {
+    width: 80%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}

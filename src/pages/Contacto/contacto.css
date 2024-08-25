@@ -22,25 +22,26 @@ h2 {
     margin-right: 20px;
 }
 
-.form-group {
+.contacto-form .form-group {
     margin-bottom: 15px;
 }
 
-.form-group label {
+.contacto-form .form-group label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
 }
 
-.form-group input,
-.form-group textarea {
-    width: 100%;
+.contacto-form .form-group input,
+.contacto-form .form-group textarea {
+    width: 80%;
+    min-width: 480px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
-.form-group textarea {
+.contacto-form .form-group textarea {
     height: 100px;
     resize: none;
 }

@@ -2,7 +2,7 @@ import React from 'react'
 import { useForm } from '../../hooks/useForm'
 import { useState } from 'react'
 
-export default function DatosCliente() {
+export default function DatosCliente({validar,setValidar}) {
   const {
     changeForm,resetForm, ...datos } = useForm({
       email: "",
@@ -107,10 +107,12 @@ export default function DatosCliente() {
 
   const VerificarDatos = () => {
     if (ValidarForm()) {
+      setValidar(true)
       console.log("Formulario válido:", datos);
       // resetForm()
       // Realiza la acción deseada, por ejemplo, enviar los datos
     } else {
+      setValidar(false)
       console.log("Errores en el formulario:", errors);
     }
 
@@ -120,6 +122,8 @@ export default function DatosCliente() {
   }
   const GuardaDatos = () => {
     // console.log(datos);
+    console.log(errors);
+    
     VerificarDatos()
     // ValidarForm()
 
@@ -219,7 +223,7 @@ export default function DatosCliente() {
       </div>
 
 
-      <button onClick={() => GuardaDatos()} className='submit-button'>Guardar</button>
+      <button onClick={() => GuardaDatos()} className='submit-button'>Validar</button>
 
     </div>
   )

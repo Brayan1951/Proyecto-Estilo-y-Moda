@@ -33,6 +33,14 @@ export function TiendaPage({ setPagina, carrito, setCarrito }) {
 
 
 
+  const TotalCarrito = () => {
+
+    let total = 0
+    carrito.forEach(({ cantidad,precio }) => {
+      total += cantidad*precio
+    })
+    return total
+  }
   const cantidadCarrito = () => {
 
     let cantidadTotal = 0
@@ -49,7 +57,7 @@ export function TiendaPage({ setPagina, carrito, setCarrito }) {
       setSetselectCategories([...selectCategories, value])
     } else {
 
-      setSetselectCategories(selectCategories.filter((categoria) => categoria != value))
+      setSetselectCategories(selectCategories.filter((categoria) => categoria !== value))
     }
 
   }
@@ -57,7 +65,7 @@ export function TiendaPage({ setPagina, carrito, setCarrito }) {
 
 
   useEffect(() => {
-    if (selectCategories.length == 0) {
+    if (selectCategories.length === 0) {
       setProductos(TodosProductos())
 
     } else {
@@ -69,9 +77,6 @@ export function TiendaPage({ setPagina, carrito, setCarrito }) {
       setProductos(productosFiltrados)
     }
 
-    // console.log(selectCategories);
-    // console.log(productosFiltrados);
-    console.log("cambio cate");
 
   }, [selectCategories])
 
@@ -97,10 +102,10 @@ export function TiendaPage({ setPagina, carrito, setCarrito }) {
             <h5 htmlFor="Niño">Niño/Niña</h5>
           </div>
         </div>
-        <hr />
         <div className="carrito-state">
           <h4>Cantidad carrito: {cantidadCarrito()}</h4>
-          <button onClick={() => setPagina('carrito')}>Carrito</button>
+          <h4>Total: S/{TotalCarrito()}</h4>
+          <button disabled={cantidadCarrito()<=0?true:false} onClick={() => setPagina('carrito')}>Carrito</button>
         </div>
 
       </aside>
