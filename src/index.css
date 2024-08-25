@@ -10,3 +10,8 @@ main{
     height: 100%;
     padding-top: 10px;
 }
+
+.nav-item-select{
+    font-weight: bolder;
+    /* background-color: rgb(71, 71, 71); */
+}

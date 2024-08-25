@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
-import { InicioPage } from '../../pages/Inicio/InicioPage'
+import React from 'react'
+// import { InicioPage } from '../../pages/Inicio/InicioPage'
 
 // aca obtengo la referencia de la funcion para el cambio de pagina
-export function Navbar({ setPagina }) {
+export function Navbar({ paginaActual,setPagina }) {
 
 
 
@@ -19,13 +19,13 @@ export function Navbar({ setPagina }) {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
     
-            <li className="nav-item ">
+            <li className={(paginaActual==="nosotros")?"nav-item nav-item-select":"nav-item "}>
               <a className="nav-link " href="#" role="button" onClick={() => setPagina('nosotros')} >
                 Nosotros
               </a>
 
             </li>
-            <li className="nav-item ">
+            <li className={(paginaActual==="tienda")?"nav-item nav-item-select":"nav-item "}>
               <a className="nav-link " href="#" role="button" onClick={() => setPagina('tienda')} >
                 Tienda
               </a>
@@ -35,11 +35,11 @@ export function Navbar({ setPagina }) {
 
 
 
-            <li className="nav-item">
-              <a className="nav-link" role="button" onClick={() => setPagina('sedes')} >Sedes</a>
+            <li className={(paginaActual==="sedes")?"nav-item nav-item-select":"nav-item "}>
+              <a className="nav-link" href="#" role="button" onClick={() => setPagina('sedes')} >Sedes</a>
             </li>
-            <li className="nav-item">
-              <a className="nav-link" role="button" onClick={() => setPagina('contacto')} >Contactanos</a>
+            <li className={(paginaActual==="contacto")?"nav-item nav-item-select":"nav-item "}>
+              <a className="nav-link" href="#" role="button" onClick={() => setPagina('contacto')} >Contactanos</a>
             </li>
 
           </ul>
