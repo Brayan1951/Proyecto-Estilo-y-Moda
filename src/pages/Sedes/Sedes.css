@@ -1,7 +1,6 @@
 
   .sedes :nth-child(2) {
     background-color: #f0f0f0;
-    /* background-color: red; */
   }
 
 
@@ -13,10 +12,8 @@
   
   .sedes-description {
     background-color: #f0f0f0;
-    /* background-color: #ffffff; */
     padding: 20px;
     margin-bottom: 20px;
-    /* text-align: center; */
     width: 80%;
     margin: auto;
   }
@@ -27,8 +24,6 @@
     justify-content: space-between;
     margin-bottom: 20px;
     padding: 20px;
-    /* background-color: #ffffff; */
-    /* width: 100%; */
     padding: 20px 100px;
   }
   
@@ -45,7 +40,6 @@
     width: 45%;
     text-align: center;
     font-size: 18px;
-    /* background-color: #ffffff; */
     padding: 20px;
   }
   

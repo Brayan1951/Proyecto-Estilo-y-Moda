@@ -168,18 +168,7 @@ export default function DatosCliente({ validar, setValidar }) {
             <input name='celular' onChange={changeForm} type="text" />
           </div>
         </div>
-        {/* <div className="form-group">
-          <div className="form-half">
-            <label>Nombre</label>
-            {errors.tarjeta_nombre && <span className="error-message">{errors.tarjeta_nombre}</span>}
-            <input name='nombre' onChange={changeForm} type="text" />
-          </div>
-          <div className="form-half">
-            <label>Apellido</label>
-            {errors.tarjeta_apellido && <span className="error-message">{errors.tarjeta_apellido}</span>}
-            <input name='apellido' onChange={changeForm} type="text" />
-          </div>
-        </div> */}
+
         <div className="form-selects">
           <label>Puntos de Entrega</label>
           <select name='entrega' className="select-box" onChange={changeForm}>

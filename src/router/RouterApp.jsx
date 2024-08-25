@@ -49,7 +49,6 @@ export default function RouterApp() {
   return (
     <div>
 
-      {/* Mando  changePagina para que el componente lo pueda utilizar*/}
         <Navbar paginaActual={paginaActual} setPagina={changePagina}/>
         {
           mostartPagina()

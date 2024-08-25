@@ -11,7 +11,6 @@ export function Navbar({ paginaActual,setPagina }) {
 
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
-        {/* en esta parte se hace el cambio de la pagina "SetPagina" */}
         <a className="navbar-brand" href="#" onClick={() => setPagina('inicio')}>Estilo y Moda</a>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>

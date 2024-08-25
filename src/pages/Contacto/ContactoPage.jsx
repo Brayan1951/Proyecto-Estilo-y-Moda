@@ -112,10 +112,7 @@ export function ContactoPage() {
             {errors.descripcion && <span className="error-message">{errors.descripcion}</span>}
 
           </div>
-          {/* <div className="form-group terms">
-            <input type="checkbox" />
-            <label>Aceptar los términos y condiciones</label>
-          </div> */}
+   
           <button type="submit" className="btn-submit">Enviar</button>
         </form>
         {modalVisible && (

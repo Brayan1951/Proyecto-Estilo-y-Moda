@@ -27,10 +27,7 @@ const Comprar=()=>{
 
   return (
     <div className="carrito-total">
-{/* 
-      {
-        viewBoleta?
-      } */}
+
       <Boleta viewBoleta={viewBoleta} setViewBoleta={setViewBoleta} carrito={carrito} Comprar={Comprar}/>
       <div className="total-info">
         <h4>Sub Total</h4>
@@ -47,7 +44,6 @@ const Comprar=()=>{
     <div className="total-info">
 
       <button disabled={(Totales()<=0||!validar)?true:false} className='total-pagar'  onClick={()=>  setViewBoleta(true)}>Pagar</button>
-      {/* <button disabled={(Totales()<=0)?true:false} className='total-pagar' onClick={()=>  setViewBoleta(true)}>Pagar</button> */}
     </div>
 
     </div>
