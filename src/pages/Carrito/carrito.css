@@ -243,6 +243,10 @@ min-width: 260px;
   cursor: not-allowed; /* Cambia el cursor a uno que indique que no es clickeable */
 }
 
+.remove-button img{
+width: 35px;
+}
+
 /* validaciones */
 
 .error-message {

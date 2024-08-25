@@ -3,13 +3,14 @@ import { TodosProductos } from '../../assets/data'
 import { Card } from '../../components'
 
 import './tienda.css'
+import { useForm } from '../../hooks'
 // import s from './img/productos/C1.jpeg' 
 // import imagen from './../../assets/img/productos/C1.jpeg'
 
 
 export function TiendaPage({ setPagina, carrito, setCarrito }) {
 
-
+ const {search,changeForm}=useForm({search:""})
 
   const [productos, setProductos] = useState([])
 
@@ -65,7 +66,7 @@ export function TiendaPage({ setPagina, carrito, setCarrito }) {
 
 
   useEffect(() => {
-    if (selectCategories.length === 0) {
+    if (selectCategories.length === 0 ) {
       setProductos(TodosProductos())
 
     } else {
@@ -80,12 +81,46 @@ export function TiendaPage({ setPagina, carrito, setCarrito }) {
 
   }, [selectCategories])
 
+const filtarbyName=()=>{
+  if (search==="") {
+    setProductos(TodosProductos())
+  }else{
+
+    const productFilter=TodosProductos().filter((val)=>val.nombre.toUpperCase().startsWith(search.trim().toUpperCase()))
+    
+    setProductos(productFilter)
+  }
+}
+
+
 
   return (
     <main className='main-lista'>
 
       <aside className='filtro-lista'>
+        <div className="filtro-find">
+          <input type="text" name='search' value={search} onChange={changeForm} />
+          <button onClick={()=>filtarbyName()}>
+            <img src="/img/productos/search.png" alt="" />
+          </button>
+        </div>
 
+        <div className="categoria">
+          <h3>Categoria</h3>
+          <div className="check-categoria">
+
+            <input value={'hombre'} onChange={handleCheckBox} type='checkbox' />
+            <h5 htmlFor="Hombre">Hombre</h5>
+          </div>
+          <div className="check-categoria">
+            <input value={"mujer"} onChange={handleCheckBox} type='checkbox' />
+            <h5 htmlFor="Mujer">Mujer</h5>
+          </div>
+          <div className="check-categoria">
+            <input value={"niño"} onChange={handleCheckBox} type='checkbox' />
+            <h5 htmlFor="Niño">Niño/Niña</h5>
+          </div>
+        </div>
         <div className="categoria">
           <h3>Categoria</h3>
           <div className="check-categoria">

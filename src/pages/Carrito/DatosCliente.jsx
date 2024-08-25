@@ -2,9 +2,9 @@ import React from 'react'
 import { useForm } from '../../hooks/useForm'
 import { useState } from 'react'
 
-export default function DatosCliente({validar,setValidar}) {
+export default function DatosCliente({ validar, setValidar }) {
   const {
-    changeForm,resetForm, ...datos } = useForm({
+    changeForm, resetForm, ...datos } = useForm({
       email: "",
       documento: "",
       celular: "",
@@ -16,7 +16,7 @@ export default function DatosCliente({validar,setValidar}) {
       tarjeta_vencimiento_mes: "",
       tarjeta_vencimiento_anio: "",
       tarjeta_codigo: "",
-      entrega:""
+      entrega: ""
     })
 
   const [errors, setErrors] = useState({})
@@ -26,21 +26,19 @@ export default function DatosCliente({validar,setValidar}) {
     const { email,
       documento,
       celular,
-      nombre,
-      apellido,
+
       tarjeta,
       tarjeta_nombre,
       tarjeta_apellido,
       tarjeta_vencimiento_mes,
       tarjeta_vencimiento_anio,
-      tarjeta_codigo,entrega } = datos
+      tarjeta_codigo, entrega } = datos
 
 
     if (!email
       || !documento
       || !celular
-      || !nombre
-      || !apellido
+  
       || !tarjeta
       || !tarjeta_nombre
       || !tarjeta_apellido
@@ -56,12 +54,14 @@ export default function DatosCliente({validar,setValidar}) {
     const celularRegex = /^\d{9}$/;
     const tarjetaRegex = /^\d{16}$/;
 
+    const nombre_apellidp = /^(?:[^0-9]*[a-zA-ZñÑ]){3,}[^0-9]*$/;
+    const fecha = /^[0-9]{2}/
+    const codigoSe = /^[0-9]{3}/
 
 
 
-    
     if (!entrega) {
-      
+
       formError.entrega = "Debes seleccionar una dirección de entrega";
     }
     if (!emailRegex.test(email)) {
@@ -87,7 +87,22 @@ export default function DatosCliente({validar,setValidar}) {
       formError.tarjeta = "El número de tarjeta debe tener 16 dígitos";
     }
 
+    if (!fecha.test(tarjeta_vencimiento_mes)) {
+      formError.tarjeta_vencimiento_mes = "El numero de fecha de vencimiento es invalido"
+    }
 
+    if (!fecha.test(tarjeta_vencimiento_anio)) {
+      formError.tarjeta_vencimiento_anio = "El numero de fecha de vencimiento es invalido"
+    }
+    if (!codigoSe.test(tarjeta_codigo)) {
+      formError.tarjeta_codigo = "El codigo de seguridad es invalido"
+    }
+    if (!nombre_apellidp.test(tarjeta_nombre)) {
+      formError.tarjeta_nombre = "El nombre es invalido"
+    }
+    if (!nombre_apellidp.test(tarjeta_apellido)) {
+      formError.tarjeta_apellido = "El apellido es invalido"
+    }
 
 
 
@@ -123,7 +138,7 @@ export default function DatosCliente({validar,setValidar}) {
   const GuardaDatos = () => {
     // console.log(datos);
     console.log(errors);
-    
+
     VerificarDatos()
     // ValidarForm()
 
@@ -139,33 +154,35 @@ export default function DatosCliente({validar,setValidar}) {
 
           <label>Correo Electronico</label>
           <input name='email' onChange={changeForm} type="email" />
-            {errors.email && <span className="error-message">{errors.email}</span>}
+          {errors.email && <span className="error-message">{errors.email}</span>}
         </div>
         <div className="form-group">
           <div className="form-half">
             <label>Nro DNI/Pasaporte/Cedula</label>
-            <input name='documento' onChange={changeForm} type="text" />
             {errors.documento && <span className="error-message">{errors.documento}</span>}
+            <input name='documento' onChange={changeForm} type="text" />
           </div>
           <div className="form-half">
             <label>Nro Celular</label>
-            <input name='celular' onChange={changeForm} type="text" />
             {errors.celular && <span className="error-message">{errors.celular}</span>}
+            <input name='celular' onChange={changeForm} type="text" />
           </div>
         </div>
-        <div className="form-group">
+        {/* <div className="form-group">
           <div className="form-half">
             <label>Nombre</label>
+            {errors.tarjeta_nombre && <span className="error-message">{errors.tarjeta_nombre}</span>}
             <input name='nombre' onChange={changeForm} type="text" />
           </div>
           <div className="form-half">
             <label>Apellido</label>
+            {errors.tarjeta_apellido && <span className="error-message">{errors.tarjeta_apellido}</span>}
             <input name='apellido' onChange={changeForm} type="text" />
           </div>
-        </div>
+        </div> */}
         <div className="form-selects">
           <label>Puntos de Entrega</label>
-          <select name='entrega' className="select-box"  onChange={changeForm}>
+          <select name='entrega' className="select-box" onChange={changeForm}>
             <option value="" disabled selected hidden>Seleccionar punto de entrega</option>
 
             <option value="puente pienda">Puente Piedra</option>
@@ -187,11 +204,13 @@ export default function DatosCliente({validar,setValidar}) {
         </div>
         <div className="form-group">
           <div className="form-half">
-            <label>Nombre</label>
+            <label>Nombres del Titular</label>
+            {errors.tarjeta_nombre && <span className="error-message">{errors.tarjeta_nombre}</span>}
             <input name='tarjeta_nombre' onChange={changeForm} type="text" />
           </div>
           <div className="form-half">
-            <label>Apellido</label>
+            <label>Apellidos del Titular</label>
+            {errors.tarjeta_apellido && <span className="error-message">{errors.tarjeta_apellido}</span>}
             <input name='tarjeta_apellido' onChange={changeForm} type="text" />
           </div>
         </div>
@@ -202,19 +221,24 @@ export default function DatosCliente({validar,setValidar}) {
 
         <div className="form-group">
           <div className="form-half">
+            {errors.tarjeta_vencimiento_mes && <span className="error-message">{errors.tarjeta_vencimiento_mes}</span>}
             <label>Fecha de vencimiento de la tarjeta</label>
             <input name='tarjeta_vencimiento_mes' onChange={changeForm} type="text" />
           </div>
           <div className="form-half">
+            {errors.tarjeta_vencimiento_anio && <span className="error-message">{errors.tarjeta_vencimiento_anio}</span>}
             <label>(MM/YY)</label>
             <input name='tarjeta_vencimiento_anio' onChange={changeForm} type="text" />
           </div>
+
         </div>
         <div className="form-group">
           <div className="form-half">
             <label>Codigo de seguridad</label>
+          {errors.tarjeta_codigo && <span className="error-message">{errors.tarjeta_codigo}</span>}
             <input name='tarjeta_codigo' onChange={changeForm} type="text" />
           </div>
+
         </div>
 
         <div className="general-error-message">

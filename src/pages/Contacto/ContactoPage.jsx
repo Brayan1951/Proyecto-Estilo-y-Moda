@@ -6,11 +6,11 @@ import { useForm } from '../../hooks';
 
 export function ContactoPage() {
 
-
+  const [modalVisible, setModalVisible] = useState(false);
 
   const [errors, setErrors] = useState({})
 
-  const { changeForm, ...datos } = useForm({
+  const { changeForm,resetForm, ...datos } = useForm({
     nombres: '',
     apellidos: '',
     correo: '',
@@ -33,13 +33,11 @@ export function ContactoPage() {
     }
 
     const emailRegex = /^\S+@\S+\.\S+$/;
-    const documentoRegex = /^\d{8,10}$/;
-    const celularRegex = /^\d{9}$/;
-    const tarjetaRegex = /^\d{16}$/;
 
-    const nombre_apellidp = /[a-zA-Z]/;
+    const nombre_apellidp = /^(?:[^0-9]*[a-zA-ZñÑ]){3,}[^0-9]*$/;
+
     if (!nombre_apellidp.test(nombres)) {
-      formError.nombres = "El nombre es incorrecto"
+      formError.nombres = "El nombre es incorrecto, solo debe contener solo y almenos 3 letras"
 
     }
     if (!nombre_apellidp.test(apellidos)) {
@@ -58,11 +56,16 @@ export function ContactoPage() {
     if (!descripcion) {
       formError.descripcion = "Debe completarse este campo";
     }
-
-
-
-
-
+    if (Object.keys(formError).length === 0) {
+      // Mostrar el modal si no hay errores
+      setModalVisible(true);
+      
+      // Cerrar el modal después de 5 segundos
+      setTimeout(() => {
+        setModalVisible(false);
+        resetForm()
+      }, 3000);
+    }
 
 
     setErrors(formError)
@@ -74,7 +77,7 @@ export function ContactoPage() {
     <div className="contacto-container">
       <h2>Contáctanos</h2>
       <div className="contacto-content">
-        <form className="contacto-form" onSubmit={(e) => ValidarForm(e)}>
+        <form className="contacto-form" action='POST' onSubmit={(e) => ValidarForm(e)}>
           <div className="form-group">
             <label>Nombres</label>
             <input type="text" name='nombres' value={datos.nombres} onChange={changeForm} placeholder="Nombres" />
@@ -115,6 +118,21 @@ export function ContactoPage() {
           </div> */}
           <button type="submit" className="btn-submit">Enviar</button>
         </form>
+        {modalVisible && (
+        <section className="modal">
+          <div className="modal-contacto">
+            <h3>Tu mensaje fue enviado</h3>
+            <p>Gracias por contactarnos {datos.nombres}</p>
+          <div className="contect-check">
+
+            <img src='/gif/check.gif' alt='check verificacion'/>
+          </div>
+          </div>
+        </section>
+      )}
+
+
+
         <div className="contacto-image">
           <img src="/img/contactanos/Servicio_cliente.jpg" alt="Contact" />
         </div>

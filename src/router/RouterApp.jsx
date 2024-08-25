@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Navbar } from '../components/navbar/Navbar'
-import { CarritoPage, ContactoPage, InicioPage, NosotrosPage, NotFoundPage, SedesPage, TiendaPage } from '../pages'
+import { CarritoPage, ContactoPage, InicioPage, NosotrosPage, SedesPage, TiendaPage } from '../pages'
 
 export default function RouterApp() {
 
@@ -38,7 +38,7 @@ export default function RouterApp() {
     
     
       default:
-        return <NotFoundPage/> 
+        return <InicioPage/> 
     }
 
 

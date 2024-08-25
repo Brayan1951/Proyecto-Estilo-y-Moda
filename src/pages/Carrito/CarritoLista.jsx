@@ -24,7 +24,9 @@ function CarritoItem({producto,deleteCarrito,index}) {
         </div>
  
         <div className="product-remove">
-          <button className="remove-button"  onClick={() => deleteCarrito(index)}></button>
+          <button className="remove-button"  onClick={() => deleteCarrito(index)}>
+            <img src="/img/productos/trash.png" alt="eliminar" />
+          </button>
         </div>
       </div>
     )

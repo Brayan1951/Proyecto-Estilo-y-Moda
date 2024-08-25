@@ -27,7 +27,7 @@ aside {
 }
 
 .filtro-lista {
-  height: 400px;
+  min-height: 700px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -50,19 +50,50 @@ h5 {
   width: 100%;
   text-align: center;
 }
-.carrito-state{
+
+.carrito-state {
   display: flex;
   flex-direction: column;
 }
+
 .carrito-state button {
   border-radius: 5px;
-  width:  250px;
+  width: 250px;
 
   height: 50px;
   background-color: #2C2B2B;
   color: white;
-  margin:15px auto;
+  margin: 15px auto;
 }
+
 .carrito-state button:disabled {
   background-color: #5b5b5b;
+}
+
+.filtro-find input[type="text"] {
+  width: 80%;
+  padding: 5px;
+  border-right: 0;
+  border-radius: 5px 0 0 5px;
+}
+
+.filtro-find input[type="text"],
+.filtro-find button {
+  height: 40px;
+  /* padding: 20px; */
+}
+
+.filtro-find button {
+  border-right: 1px solid #000000;
+  border-top: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+  border-left: 0;
+  /* border: 0 0 1px 0; */
+  border-radius: 0 5px 5px 0;
+}
+
+.filtro-find button img {
+  /* width: 30px; */
+  width: 20px;
+  margin: auto;
 }

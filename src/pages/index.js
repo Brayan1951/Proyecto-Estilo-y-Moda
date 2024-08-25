@@ -7,5 +7,4 @@ export { SedesPage } from "./Sedes/SedesPage";
 export { ContactoPage } from "./Contacto/ContactoPage";
 
 
-export {NotFoundPage} from "./NotFound/NotFoundPage";
 
