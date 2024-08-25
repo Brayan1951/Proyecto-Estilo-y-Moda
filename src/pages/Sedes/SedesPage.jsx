@@ -4,9 +4,7 @@ import Sedes from './Sedes';
 
 export function SedesPage() {
   return (
-    // <div className='container'> 
-    // <Sedes/> 
-    // </div>
+
     <section className='sedes-container'>
       <h1>Sedes</h1>
       <p className="sedes-description">
