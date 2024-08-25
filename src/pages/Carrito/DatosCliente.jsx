@@ -55,8 +55,8 @@ export default function DatosCliente({ validar, setValidar }) {
     const tarjetaRegex = /^\d{16}$/;
 
     const nombre_apellidp = /^(?:[^0-9]*[a-zA-ZñÑ]){3,}[^0-9]*$/;
-    const fecha = /^[0-9]{2}/
-    const codigoSe = /^[0-9]{3}/
+    const fecha = /^[0-9]{2}$/
+    const codigoSe = /^[0-9]{3}$/
 
 
 

@@ -3,7 +3,7 @@ import { useForm } from '../../hooks'
 import { useState } from 'react'
 
 export default function Modal({ show, closeModal, producto, agregarCarrito }) {
-    const { nombre, descripcion, precio, imagen } = producto
+    const { nombre, descripcion, precio, imagen,altImagen } = producto
     const [talla, setTalla] = useState("")
 
     const { cantidad, changeForm, resetForm } = useForm({ cantidad: 1 })
@@ -34,7 +34,7 @@ export default function Modal({ show, closeModal, producto, agregarCarrito }) {
                 <div className="modal-content_informacion">
                     <h1>{nombre}</h1>
                     <div className="imagen-container">
-                        <img src={imagen} alt="" />
+                        <img src={imagen} alt={altImagen} />
                     </div>
 
                 </div>

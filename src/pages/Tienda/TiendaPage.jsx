@@ -4,13 +4,11 @@ import { Card } from '../../components'
 
 import './tienda.css'
 import { useForm } from '../../hooks'
-// import s from './img/productos/C1.jpeg' 
-// import imagen from './../../assets/img/productos/C1.jpeg'
 
 
 export function TiendaPage({ setPagina, carrito, setCarrito }) {
 
- const {search,changeForm}=useForm({search:""})
+ const {search,changeForm,resetForm}=useForm({search:""})
 
   const [productos, setProductos] = useState([])
 
@@ -53,6 +51,7 @@ export function TiendaPage({ setPagina, carrito, setCarrito }) {
 
 
   const handleCheckBox = (event) => {
+    resetForm()
     const { value, checked } = event.target;
     if (checked) {
       setSetselectCategories([...selectCategories, value])
@@ -122,18 +121,13 @@ const filtarbyName=()=>{
           </div>
         </div>
         <div className="categoria">
-          <h3>Categoria</h3>
+     
           <div className="check-categoria">
-
-            <input value={'polos'} onChange={handleCheckBox} type='checkbox' />
-            <h5 htmlFor="Polos">Polos</h5>
-          </div>
-          <div className="check-categoria">
-            <input value={"camisas"} onChange={handleCheckBox} type='checkbox' />
+            <input value={"camisa"} onChange={handleCheckBox} type='checkbox' />
             <h5 htmlFor="Camisas">Camisas</h5>
           </div>
           <div className="check-categoria">
-            <input value={"vestidos"} onChange={handleCheckBox} type='checkbox' />
+            <input value={"vestido"} onChange={handleCheckBox} type='checkbox' />
             <h5 htmlFor="Vesitos">Vestidos</h5>
           </div>
         </div>

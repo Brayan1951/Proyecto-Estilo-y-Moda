@@ -9,7 +9,7 @@ export function Card({ producto,agregarCarrito }) {
     
     
     
-    const { nombre, descripcion, precio, stock, imagen, altImagen } = producto
+    const { nombre, precio, imagen, altImagen } = producto
 
     const [showModal, setShowModal] = useState(false)
 
@@ -20,15 +20,21 @@ export function Card({ producto,agregarCarrito }) {
         setShowModal(false)
     }
 
-
+    const formatearTexto=(texto)=>{
+        if (texto.length > 16) {
+            return texto.substring(0, 16) + "...";
+          } else {
+            return texto;
+          }
+    }
 
 
     return (
         <>
             <article>
-                <h3>{nombre}</h3>
+                <h4>{formatearTexto(nombre)}</h4>
                 <div className="imagen-container">
-                    <img src={imagen} alt="" />
+                    <img src={imagen} alt={altImagen} />
                 </div>
                 <h4>S/ {precio}</h4>
                 <button onClick={() => openModal()}>Agregar</button>

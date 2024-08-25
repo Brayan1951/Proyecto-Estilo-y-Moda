@@ -8,6 +8,8 @@ export function useForm(initState) {
     }
 
   const changeForm = (e) => {
+    console.log(e);
+    
     setFormData(prev=>({
         ...prev,
         [e.target.name]:e.target.value

@@ -14,7 +14,7 @@
     background-color: white;
     padding: 20px;
     width: 50%;
-    height: 500px;
+    min-height: 500px;
     min-width: 900px;
     display: flex;
     flex-direction: column;
