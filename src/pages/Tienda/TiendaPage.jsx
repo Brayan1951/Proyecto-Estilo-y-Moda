@@ -125,16 +125,16 @@ const filtarbyName=()=>{
           <h3>Categoria</h3>
           <div className="check-categoria">
 
-            <input value={'hombre'} onChange={handleCheckBox} type='checkbox' />
-            <h5 htmlFor="Hombre">Hombre</h5>
+            <input value={'polos'} onChange={handleCheckBox} type='checkbox' />
+            <h5 htmlFor="Polos">Polos</h5>
           </div>
           <div className="check-categoria">
-            <input value={"mujer"} onChange={handleCheckBox} type='checkbox' />
-            <h5 htmlFor="Mujer">Mujer</h5>
+            <input value={"camisas"} onChange={handleCheckBox} type='checkbox' />
+            <h5 htmlFor="Camisas">Camisas</h5>
           </div>
           <div className="check-categoria">
-            <input value={"niño"} onChange={handleCheckBox} type='checkbox' />
-            <h5 htmlFor="Niño">Niño/Niña</h5>
+            <input value={"vestidos"} onChange={handleCheckBox} type='checkbox' />
+            <h5 htmlFor="Vesitos">Vestidos</h5>
           </div>
         </div>
         <div className="carrito-state">
