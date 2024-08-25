@@ -1,6 +1,5 @@
 import React from 'react'
 import './sedes.css'
-import Sedes from './Sedes';
 
 export function SedesPage() {
   return (
